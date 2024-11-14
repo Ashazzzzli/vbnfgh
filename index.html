@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Varisha</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9983.jpg');
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the question container */
+        .question-container {
+            text-align: center;
+            background-image: url('https://i.pinimg.com/originals/7d/68/a4/7d68a425553c15f0edbddbc163d9c462.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* White text for readability */
+            font-weight: bold;
+        }
+
+        /* Button style */
+        .answer-button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff007f;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Feedback message style */
+        .feedback {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            animation: fadeOut 2s forwards;
+        }
+
+        /* Animation for feedback message to fade out */
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Specific feedback colors */
+        .wrong { color: red; }
+        .correct { color: green; }
+    </style>
+</head>
+<body>
+    <!-- Question container -->
+    <div class="question-container">
+        <p>Do you love me more?</p>
+        <button class="answer-button" onclick="showFeedback('wrong')">Yes</button>
+        <button class="answer-button" onclick="showFeedback('correct')">No</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script>
+        // Function to display feedback based on the answer
+        function showFeedback(answer) {
+            const feedbackDiv = document.getElementById('feedback');
+            if (answer === 'wrong') {
+                feedbackDiv.textContent = 'Err! Wrong!';
+                feedbackDiv.className = 'feedback wrong';
+                setTimeout(() => feedbackDiv.textContent = '', 2000);
+            } else if (answer === 'correct') {
+                feedbackDiv.textContent = 'Yay! Correct!';
+                feedbackDiv.className = 'feedback correct';
+            }
+        }
+    </script>
+</body>
+</html>
